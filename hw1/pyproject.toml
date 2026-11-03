@@ -1,0 +1,36 @@
+[project]
+name = "recsys-hw1-amazon"
+version = "0.1.0"
+description = "HW1: comparison of 5 recommender models implemented from scratch on Amazon Reviews 2023 (Video_Games)"
+readme = "README.md"
+requires-python = ">=3.14"
+license = "MIT"
+authors = [{ name = "mhlsjk" }]
+dependencies = [
+    "numpy",
+    "scipy",
+    "polars",
+    "matplotlib",
+    "pyyaml",
+    "torch",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "nbclient>=0.11.0",
+    "nbformat>=5.11.1",
+    "pytest",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
